@@ -41,11 +41,11 @@ public class Game {
     void checkWinner() {
         for (int i = 0; i < 3; i++) {
             if (board.get(i, 0) != EMPTY && board.get(i, 0) == board.get(i, 1) && board.get(i, 0) == board.get(i, 2))
-                endGame(board.get(i,0));
+                endGame(board.get(i, 0));
             if (board.get(0, i) != EMPTY && board.get(0, i) == board.get(1, i) && board.get(0, i) == board.get(2, i))
                 endGame(board.get(0, i));
         }
-        if (board.get(1,1) == EMPTY)
+        if (board.get(1, 1) == EMPTY)
             return;
         if (board.get(0, 0) == board.get(1, 1) && board.get(0, 0) == board.get(2, 2))
             endGame(board.get(0, 0));
@@ -57,13 +57,27 @@ public class Game {
         if (field == CIRCLE) {
             status = WINNER_CIRCLE;
             winner = playerCircle;
-        }
-        else if (field == CROSS) {
+        } else if (field == CROSS) {
             status = WINNER_CROSS;
             winner = playerCross;
-        }
-        else
-        status = DRAW;
+        } else
+            status = DRAW;
+    }
+
+    Status getStatus() {
+        return status;
+    }
+
+    Player getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    public String currentPlayerToString() {
+        return currentPlayer == playerCircle ? "Circle" : "Cross";
+    }
+
+    public String boardToString() {
+        return board.toString();
     }
 
     @Override

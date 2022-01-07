@@ -2,7 +2,6 @@ package com.example.tictactoetwo;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import static com.example.tictactoetwo.Field.EMPTY;
 
@@ -26,14 +25,11 @@ public class Board {
 
     @Override
     public String toString() {
-        String boardString = Arrays.stream(board)
-                .map(column -> {
-                    return Arrays.stream(column)
-                            .map(Field::toString)
-                            .collect(Collectors.joining());
-                }).collect(Collectors.joining());
-        return "Board{" +
-                "board=" + boardString +
-                '}';
+        return Arrays.stream(board)
+                .map(column -> Arrays.stream(column)
+                        .map(Field::toString)
+                        .collect(Collectors.joining()))
+                .collect(Collectors.joining("\n"));
     }
+
 }
