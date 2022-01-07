@@ -1,5 +1,8 @@
 package com.example.tictactoetwo;
 
+import com.example.tictactoetwo.tictactoe.Game;
+import com.example.tictactoetwo.tictactoe.Status;
+
 import java.util.Scanner;
 
 public class CLI {

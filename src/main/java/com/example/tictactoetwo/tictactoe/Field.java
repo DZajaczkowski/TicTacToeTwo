@@ -1,4 +1,4 @@
-package com.example.tictactoetwo;
+package com.example.tictactoetwo.tictactoe;
 
 public enum Field {
 

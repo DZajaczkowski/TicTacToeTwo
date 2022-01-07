@@ -1,9 +1,11 @@
-package com.example.tictactoetwo;
+package com.example.tictactoetwo.tictactoe;
 
 
-import static com.example.tictactoetwo.Field.*;
-import static com.example.tictactoetwo.Status.*;
-import static com.example.tictactoetwo.Status.WINNER_CIRCLE;
+import com.example.tictactoetwo.Player;
+
+import static com.example.tictactoetwo.tictactoe.Field.*;
+import static com.example.tictactoetwo.tictactoe.Status.*;
+import static com.example.tictactoetwo.tictactoe.Status.WINNER_CIRCLE;
 
 public class Game {
 
@@ -20,7 +22,7 @@ public class Game {
         currentPlayer = playerCircle;
     }
 
-    void move(int row, int column, Player player) {
+    public void move(int row, int column, Player player) {
         if (status != IN_PROGRESS)
             return;
         if (player != currentPlayer)
@@ -64,11 +66,11 @@ public class Game {
             status = DRAW;
     }
 
-    Status getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    Player getCurrentPlayer() {
+    public Player getCurrentPlayer() {
         return currentPlayer;
     }
 

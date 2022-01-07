@@ -1,9 +1,9 @@
-package com.example.tictactoetwo;
+package com.example.tictactoetwo.tictactoe;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-import static com.example.tictactoetwo.Field.EMPTY;
+import static com.example.tictactoetwo.tictactoe.Field.EMPTY;
 
 public class Board {
 
