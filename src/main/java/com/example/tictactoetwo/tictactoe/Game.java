@@ -1,7 +1,7 @@
 package com.example.tictactoetwo.tictactoe;
 
 
-import com.example.tictactoetwo.Player;
+import com.example.tictactoetwo.player.Player;
 
 import static com.example.tictactoetwo.tictactoe.Field.*;
 import static com.example.tictactoetwo.tictactoe.Status.*;
@@ -73,6 +73,20 @@ public class Game {
     public Player getCurrentPlayer() {
         return currentPlayer;
     }
+
+    public Player getPlayerCircle() {
+        return playerCircle;
+    }
+
+    public Player getPlayerCross() {
+        return playerCross;
+    }
+
+    public Board getBoard() {
+        return board;
+    }
+
+
 
     public String currentPlayerToString() {
         return currentPlayer == playerCircle ? "Circle" : "Cross";

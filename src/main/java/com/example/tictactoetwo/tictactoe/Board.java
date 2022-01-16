@@ -23,6 +23,10 @@ public class Board {
         board[row][column] = field;
     }
 
+    public Field[][] getBoard() {
+        return board;
+    }
+
     @Override
     public String toString() {
         return Arrays.stream(board)
