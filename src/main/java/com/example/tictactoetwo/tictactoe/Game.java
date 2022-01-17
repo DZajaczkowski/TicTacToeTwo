@@ -1,6 +1,8 @@
 package com.example.tictactoetwo.tictactoe;
 
 
+import com.example.tictactoetwo.exceptions.FieldTaken;
+import com.example.tictactoetwo.exceptions.TurnOfAnotherPlayer;
 import com.example.tictactoetwo.player.Player;
 
 import static com.example.tictactoetwo.tictactoe.Field.*;
@@ -15,6 +17,7 @@ public class Game {
     private Player currentPlayer;
     private Status status = IN_PROGRESS;
     private Player winner;
+    public long id;
 
     public Game(Player playerCircle, Player playerCross) {
         this.playerCircle = playerCircle;
@@ -23,12 +26,10 @@ public class Game {
     }
 
     public void move(int row, int column, Player player) {
-        if (status != IN_PROGRESS)
-            return;
         if (player != currentPlayer)
-            return;
+            throw new TurnOfAnotherPlayer();
         if (board.get(row, column) != EMPTY) {
-            return;
+            throw new FieldTaken();
         }
         Field field = currentPlayer == playerCircle ? CIRCLE : CROSS;
         board.set(row, column, field);
@@ -85,8 +86,6 @@ public class Game {
     public Board getBoard() {
         return board;
     }
-
-
 
     public String currentPlayerToString() {
         return currentPlayer == playerCircle ? "Circle" : "Cross";

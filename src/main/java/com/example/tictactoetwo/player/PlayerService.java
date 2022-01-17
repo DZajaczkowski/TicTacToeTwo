@@ -1,6 +1,6 @@
 package com.example.tictactoetwo.player;
 
-import com.example.tictactoetwo.player.Player;
+import com.example.tictactoetwo.exceptions.PlayerNotFound;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -22,6 +22,11 @@ public class PlayerService {
         return players.stream()
                 .filter(player -> player.id == id)
                 .findFirst()
-                .orElseThrow();
+                .orElseThrow(PlayerNotFound::new);
     }
+
+    public List<Player> getPlayers() {
+        return players;
+    }
+
 }

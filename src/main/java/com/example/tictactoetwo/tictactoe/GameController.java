@@ -16,28 +16,18 @@ public class GameController {
     }
 
     @PostMapping
-    public ResponseEntity<Game> newGame() {
-        return new ResponseEntity<>(gameService.newGame(),HttpStatus.CREATED);
+    public ResponseEntity<Game> newGame(@RequestBody NewGameRequest newGameRequest) {
+        return new ResponseEntity<>(gameService.newGame(newGameRequest),HttpStatus.CREATED);
     }
 
-    @GetMapping("/status")
-    public Game showStatus() {
-        return gameService.getGame();
+    @GetMapping("/status/{id}")
+    public Game showStatus(@PathVariable long id) {
+        return gameService.getGame(id);
     }
 
-    @PostMapping("/move")
-    public Game move(@RequestBody Move move) {
-        return gameService.move(move);
+    @PostMapping("/{id}/move")
+    public Game move(@RequestBody Move move, @PathVariable long id) {
+        return gameService.move(move, id);
     }
-
-//    @GetMapping("")
-//    public void temp2() {
-//
-//    }
-//
-//    @GetMapping("")
-//    public void temp3() {
-//
-//    }
 
 }
