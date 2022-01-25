@@ -1,12 +1,14 @@
 package com.example.tictactoetwo.player;
 
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("api/player")
+@RequestMapping("/api/player")
 public class PlayerController {
 
     private final PlayerService playerService;
@@ -16,8 +18,9 @@ public class PlayerController {
     }
 
     @PostMapping
-    public Player createPlayer() {
-        return playerService.newPlayer();
+    public ResponseEntity<Player> createPlayer() {
+        return new ResponseEntity<>(playerService.newPlayer(), HttpStatus.CREATED);
+//        return null;
     }
 
     @GetMapping("/{id}")

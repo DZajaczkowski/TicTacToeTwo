@@ -1,5 +1,7 @@
 package com.example.tictactoetwo.tictactoe;
 
+import lombok.Getter;
+
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
@@ -7,7 +9,7 @@ import static com.example.tictactoetwo.tictactoe.Field.EMPTY;
 
 public class Board {
 
-    private final Field[][] board = new Field[3][3];
+    @Getter private final Field[][] board = new Field[3][3];
 
     Board() {
         for (int i = 0; i < 9; i++) {
@@ -21,10 +23,6 @@ public class Board {
 
     void set(int row, int column, Field field) {
         board[row][column] = field;
-    }
-
-    public Field[][] getBoard() {
-        return board;
     }
 
     @Override

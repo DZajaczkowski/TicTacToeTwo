@@ -23,8 +23,8 @@ public class GameService {
     }
 
     public Game newGame(NewGameRequest newGameRequest) {
-        Player playerCircle = playerService.getPlayer(newGameRequest.playerCircle);
-        Player playerCross = playerService.getPlayer(newGameRequest.playerCross);
+        Player playerCircle = playerService.getPlayer(newGameRequest.playerCircleId);
+        Player playerCross = playerService.getPlayer(newGameRequest.playerCrossId);
         Game game = new Game(playerCircle, playerCross);
         game.id = games.size();
         games.add(game);

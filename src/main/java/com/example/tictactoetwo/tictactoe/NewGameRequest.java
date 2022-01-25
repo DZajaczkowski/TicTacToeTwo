@@ -2,7 +2,7 @@ package com.example.tictactoetwo.tictactoe;
 
 public class NewGameRequest {
 
-    public long playerCircle;
-    public long playerCross;
+    public long playerCircleId;
+    public long playerCrossId;
 
 }
