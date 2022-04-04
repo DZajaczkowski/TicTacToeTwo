@@ -5,19 +5,22 @@ import com.example.tictactoetwo.exceptions.FieldTaken;
 import com.example.tictactoetwo.exceptions.TurnOfAnotherPlayer;
 import com.example.tictactoetwo.player.Player;
 import lombok.Getter;
-import lombok.ToString;
 
 import static com.example.tictactoetwo.tictactoe.Field.*;
 import static com.example.tictactoetwo.tictactoe.Status.*;
-import static com.example.tictactoetwo.tictactoe.Status.WINNER_CIRCLE;
 
 public class Game {
 
-    @Getter private final Board board = new Board();
-    @Getter private final Player playerCircle;
-    @Getter private final Player playerCross;
-    @Getter private Player currentPlayer;
-    @Getter private Status status = IN_PROGRESS;
+    @Getter
+    private final Board board = new Board();
+    @Getter
+    private final Player playerCircle;
+    @Getter
+    private final Player playerCross;
+    @Getter
+    private Player currentPlayer;
+    @Getter
+    private Status status = IN_PROGRESS;
     private Player winner;
     public long id;
 

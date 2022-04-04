@@ -20,7 +20,11 @@ public class PlayerController {
     @PostMapping
     public ResponseEntity<Player> createPlayer() {
         return new ResponseEntity<>(playerService.newPlayer(), HttpStatus.CREATED);
-//        return null;
+    }
+
+    @PutMapping("/nickname/{id}")
+    public Player setPlayerNickname(@PathVariable long id, @RequestBody String nickname) {
+        return playerService.setPlayerNickname(id, nickname);
     }
 
     @GetMapping("/{id}")

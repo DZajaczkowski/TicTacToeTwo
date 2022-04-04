@@ -51,4 +51,8 @@ public class GameService {
             throw new WrongMove();
     }
 
+    public List<Game> getGames() {
+        return games;
+    }
+
 }

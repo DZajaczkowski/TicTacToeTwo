@@ -14,8 +14,14 @@ public class PlayerService {
     public Player newPlayer() {
         var player = new Player();
         player.id = players.size();
+        player.nickname = "guest";
         players.add(player);
         return player;
+    }
+
+    public Player setPlayerNickname(long id, String nickname) {
+        getPlayer(id).setNickname(nickname);
+        return getPlayer(id);
     }
 
     public Player getPlayer(long id) {
