@@ -11,7 +11,7 @@
 
 ## What does it do?
 
-* It is used to play simple games of TicTacToe in Spring Boot.
+* It is used to play simple games of TicTacToe in Spring REST.
 * It is able to do basic CRUD operations on games and players.
 
 ### More projects:
