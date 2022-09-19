@@ -2,7 +2,7 @@
 
 ## Why it was created?
 
-* To practice basic java project in Spring REST.
+* To practice basic java project in Spring Boot.
 * To improve on a very old TicTacToe project made when I was starting my journey with programming.
 
 ## Is the project finished?
